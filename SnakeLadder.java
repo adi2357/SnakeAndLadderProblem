@@ -5,6 +5,7 @@ public class SnakeLadder{
 	public static final int Ladder=2;
 	public static final int Snake=3;
 	public static final int minPosition=0;
+	public static final int maxPosition=100;
 	
 	public static void main(String[] args){
 		
@@ -18,7 +19,9 @@ public class SnakeLadder{
 			switch(optionCheck){
 				case Ladder:
 					System.out.println("Ladder");
-					playerPosition+=diceRoll;
+					if(playerPosition+diceRoll>maxPosition)
+					System.out.println("Stays at Player Position : "+playerPosition);
+					playerPosition=(playerPosition+diceRoll)<=maxPosition?(playerPosition+diceRoll):playerPosition;
 					break;
 				case Snake:
 					System.out.println("Snake");
