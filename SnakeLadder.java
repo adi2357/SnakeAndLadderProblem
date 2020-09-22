@@ -10,10 +10,12 @@ public class SnakeLadder{
 	public static void main(String[] args){
 		
 		int playerPosition=startPosition;
+		int numberOfDiceRolls=0;
 		
 		System.out.println("Player at Start Position "+startPosition);
 		while(playerPosition<100){
 			int diceRoll=((int)Math.floor(Math.random()*10)%6)+1;
+			numberOfDiceRolls++;
 			System.out.println("Dice Roll : "+diceRoll);
 			int optionCheck=(int)Math.floor(Math.random()*10)%3+1;
 			switch(optionCheck){
@@ -35,7 +37,7 @@ public class SnakeLadder{
 				default:
 			}
 			System.out.println("Player Position : "+playerPosition);
-		}		
-		
+		}
+		System.out.println("The Dice was rolled "+numberOfDiceRolls+" times to win the game.");		
 	}
 }
